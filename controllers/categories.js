@@ -1,15 +1,15 @@
-const User = require("../models/User");
+const Category = require("../models/Category");
 
-//  @desc Get all Users
-//  @route GET /api/v1/users
+//  @desc Get all Categories
+//  @route GET /api/v1/categories
 //  @access Public
 
-exports.getUsers = async (req, res, next) => {
+exports.getAllCategories = async (req, res, next) => {
     try {
-        const users = await User.find();
+        const Categories = await Category.find();
         res.status(200).json({
             success: true,
-            data: users
+            data: Categories
         });
     } catch (err) {
         res.status(400).json({
@@ -19,13 +19,13 @@ exports.getUsers = async (req, res, next) => {
     }
 };
 
-//  @desc Get single  User
-//  @route GET /api/v1/users/:id
+//  @desc Get a single category
+//  @route GET /api/v1/categories/:id
 //  @access Public
-exports.getUser = async (req, res, next) => {
+exports.getCategory = async (req, res, next) => {
     try {
-        const user = await User.findById(req.params.id);
-        if (!user) {
+        const aCategory = await Category.findById(req.params.id);
+        if (!aCategory) {
             return res.status(400).success({
                 success: false
             });
@@ -33,7 +33,7 @@ exports.getUser = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
-            data: user
+            data: aCategory
         });
     } catch (err) {
         res.status(400).json({
@@ -43,16 +43,17 @@ exports.getUser = async (req, res, next) => {
     }
 };
 
-//  @desc Create single  user
-//  @route POST /api/v1/users
+//  @desc Create a single category
+//  @route POST /api/v1/categories
 //  @access Private
-exports.createUser = async (req, res, next) => {
+exports.createCategory = async (req, res, next) => {
     try {
-        const user = await User.create(req.body);
+        console.log(req.body)
+        const aCategory = await Category.create(req.body);
 
         res.status(201).json({
             success: true,
-            data: user
+            data: aCategory
         });
     } catch (err) {
         res.status(400).json({
@@ -62,24 +63,24 @@ exports.createUser = async (req, res, next) => {
     }
 };
 
-//  @desc Update single User
-//  @route PUT /api/v1/users/:id
+//  @desc Update a single category
+//  @route PUT /api/v1/categories/:id
 //  @access Private
 
-exports.updateUser = async (req, res, next) => {
+exports.updateCategory = async (req, res, next) => {
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+        const aCategory = await Category.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
         });
-        if (!user) {
+        if (!aCategory) {
             return res.status(400).json({
                 success: false
             });
         }
         res.status(200).json({
             success: true,
-            data: user
+            data: aCategory
         });
     } catch (err) {
         res.status(400).json({
@@ -89,13 +90,13 @@ exports.updateUser = async (req, res, next) => {
     }
 };
 
-//  @desc delete single User
-//  @route DELETE /api/v1/users/:id
+//  @desc delete a single category
+//  @route DELETE /api/v1/categories/:id
 //  @access Private
-exports.deleteUser = async (req, res, next) => {
+exports.deleteCategory = async (req, res, next) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
-        if (!user) {
+        const aCategory = await Category.findByIdAndDelete(req.params.id);
+        if (!aCategory) {
             return res.status(400).json({
                 success: false
             });
