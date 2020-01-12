@@ -20,6 +20,7 @@ const auth = require('./routes/auth');
 const categories = require('./routes/categories');
 const items = require('./routes/items');
 const sections = require('./routes/sections');
+const payments = require('./routes/payments');
 
 //json body parser
 app.use(express.json());
@@ -43,9 +44,10 @@ const PORT = process.env.PORT || 5000;
 //mount routes
 app.use('/api/v1/users', users);
 app.use('/api/v1/auth', auth);
-app.use('/api/v1/categories', categories)
-app.use('/api/v1/items', items)
-app.use('/api/v1/sections', sections)
+app.use('/api/v1/categories', categories);
+app.use('/api/v1/items', items);
+app.use('/api/v1/sections', sections);
+app.use('/api/v1/payment', payments);
 
 // Serve Static assets in production
 if (process.env.NODE_ENV === 'production') {

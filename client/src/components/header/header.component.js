@@ -28,13 +28,11 @@ const Header = ({
         { " " }
         SHOP{ " " }
       </Link>
-      <Link className="option" to="/contact">
-        { " " }
-        CONTACT
-      </Link>
-      <Link onClick={ logout } className="option" to="/signin">
-        { " " }
-        LOGOUT{ " " }
+
+      <Link onClick={logout} className="option" to="/signin">
+        {" "}
+        LOGOUT{" "}
+
       </Link>
       <CartIcon />
     </div>
@@ -44,10 +42,6 @@ const Header = ({
       <Link className="option" to="/section">
         { " " }
         SHOP{ " " }
-      </Link>
-      <Link className="option" to="/contact">
-        { " " }
-        CONTACT
       </Link>
       <Link className="option" to="/signin">
         { " " }

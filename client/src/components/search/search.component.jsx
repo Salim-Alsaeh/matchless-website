@@ -3,7 +3,7 @@ import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
 import { connect } from "react-redux";
 import { searchQuery, fetchItems } from "../../actions/search";
 import { withRouter } from "react-router-dom";
-
+import { createStructuredSelector } from "reselect";
 class SearchPage extends Component {
   onChange = e => {
     this.props.searchQuery(e.target.value);
