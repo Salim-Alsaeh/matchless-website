@@ -17,12 +17,7 @@ exports.register = async (req, res, next) => {
         });
 
         // //create token
-        // const token = user.getSignedJwtToken();
-        //
-        // res.status(200).json({
-        //     success: true,
-        //     token
-        // });
+
         sendTokenResponse(user, 200, res);
 
 
@@ -41,7 +36,7 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
 
     try {
-        const { email, password} = req.body;
+        const { email, password } = req.body;
 
         //validate email & password
         if (!email || !password) {
@@ -72,12 +67,7 @@ exports.login = async (req, res, next) => {
         }
 
         // //create token
-        // const token = user.getSignedJwtToken();
-        //
-        // res.status(200).json({
-        //     success: true,
-        //     token
-        // });
+
         sendTokenResponse(user, 200, res);
 
     } catch (err) {
