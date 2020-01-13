@@ -11,12 +11,16 @@ router.post('/', (req, res) => {
         amount: req.body.amount,
         currency: 'usd'
     };
+    console.log(body);
+
 
     stripe.charges.create(body, (err, stripeResponse) => {
         if (err) {
-            res.status(500).send({error: err})
-        } else{
-            res.status(200).send({success: stripeResponse})
+            console.log(err);
+
+            res.status(500).send({ error: err })
+        } else {
+            res.status(200).send({ success: stripeResponse })
         }
     })
 });

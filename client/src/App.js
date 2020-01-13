@@ -38,7 +38,7 @@ const App = () => {
 
 
   useEffect(() => {
-    //store.dispatch(loadUser());
+    store.dispatch(loadUser());
     store.dispatch(loadSections());
     store.dispatch(loadSectionsData());
 
