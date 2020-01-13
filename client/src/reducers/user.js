@@ -1,5 +1,4 @@
 import { SET_CURRENT_USER } from "../actions/types";
-import { auth } from '../utils/firebase'
 
 const INITIAL_STATE = {
   currentUser: null

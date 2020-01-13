@@ -1,11 +1,10 @@
-import SHOP_DATA from '../pages/section/section-data';
-import {LOAD_SECTIONS_DATA, LOAD_SECTIONS_DATA_FAIL} from '../actions/types';
+import { LOAD_SECTIONS_DATA, LOAD_SECTIONS_DATA_FAIL } from '../actions/types';
 
 const INITIAL_STATE = {
-   collections: {}
+    collections: {}
 };
 
-const sectionReducer = (state = INITIAL_STATE, action ) => {
+const sectionReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case LOAD_SECTIONS_DATA:
             return {

@@ -10,7 +10,7 @@ const {
 } = require('../controllers/items');
 
 const router = express.Router();
-
+// importing protect & authorize from middleware to protect the desired routs
 const { protect, authorize } = require('../middlewares/auth');
 
 router.route('/').get(getAllItems).post(protect, authorize('admin'), createItem);
