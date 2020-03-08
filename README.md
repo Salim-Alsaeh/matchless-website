@@ -1,6 +1,6 @@
 readme
 # Matchless
-e commerce website for shopping the latest clothing lines.
+an e-commerce website iwht stripe payment integrated for shopping with the latest clothing lines.
 ## Table of contents
 * [General info](#general-info)
 * [Screenshot](#screenshot)
